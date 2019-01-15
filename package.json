@@ -2,9 +2,10 @@
   "name": "simple-logger",
   "version": "0.0.0",
   "description": "A simple but colored logger for NodeJS",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "babel src --out-dir dist"
+    "build": "babel src --out-dir dist",
+    "install": "npm run build"
   },
   "repository": {
     "type": "git",
