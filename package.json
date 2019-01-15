@@ -1,0 +1,22 @@
+{
+  "name": "simple-logger",
+  "version": "0.0.0",
+  "description": "A simple but colored logger for NodeJS",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fvilers/simple-logger.git"
+  },
+  "keywords": [
+    "simple",
+    "logger",
+    "colors",
+    "nodejs"
+  ],
+  "author": "Fabian Vilers <fabian.vilers@dev-one.com> (https://www.dev-one.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fvilers/simple-logger/issues"
+  },
+  "homepage": "https://github.com/fvilers/simple-logger#readme"
+}
