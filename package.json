@@ -1,5 +1,5 @@
 {
-  "name": "simple-logger",
+  "name": "@fvilers/simple-logger",
   "version": "0.0.0",
   "description": "A simple but colored logger for NodeJS",
   "main": "dist/index.js",
