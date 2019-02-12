@@ -11,6 +11,14 @@ const toString = arg =>
   shouldSerialize(arg) ? JSON.stringify(arg) : arg.toString();
 
 class Logger {
+  constructor(context) {
+    this._context = context;
+  }
+
+  get context() {
+    return this._context;
+  }
+
   log(message, ...optionalParams) {
     this._writeLineTo(process.stdout, chalk.reset, message, optionalParams);
   }
@@ -25,7 +33,12 @@ class Logger {
 
   _writeLineTo(stream, style, message, optionalParams) {
     const buffer = Buffer.from(
-      style([message, ...optionalParams.map(toString)].join(' '))
+      style(
+        [
+          this.context ? `[${this.context}] ${message}` : message,
+          ...optionalParams.map(toString)
+        ].join(' ')
+      )
     );
 
     stream.write(buffer, optionalParams);
