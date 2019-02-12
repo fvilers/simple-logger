@@ -33,6 +33,17 @@ logger.error('💣', 'Something went wrong!');
 
 The library exports a `Logger` singleton that can be used to write messages to **stdout** with `log()` and `warn()` while it writes to **stderr** with `error()`.
 
+## Context
+
+Sometimes, it's useful to some context to the messages being logged. You can create your own instance of the `Logger` class and set its context. This will prefix every message with the specified context.
+
+```
+const Logger = require('@fvilers/simple-logger').Logger;
+const logger = new Logger('my logger);
+
+logger.log('Hey there!'); // This will output: [my logger] Hey, there!
+```
+
 ## Bugs
 
 Don't use version `1.0.0` in a project without `@babel/cli` as it won't be correctly transpiled during installation. This bug has been fixed in version `1.0.1`.
