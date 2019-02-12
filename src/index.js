@@ -10,7 +10,7 @@ const shouldSerialize = arg =>
 const toString = arg =>
   shouldSerialize(arg) ? JSON.stringify(arg) : arg.toString();
 
-class Logger {
+export class Logger {
   constructor(context) {
     this._context = context;
   }
