@@ -1,5 +1,3 @@
 .vscode/
-dist/
-.eslintrc
 .gitignore
 yarn.lock
