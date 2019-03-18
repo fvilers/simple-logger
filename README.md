@@ -17,7 +17,7 @@ yarn add @fvilers/simple-logger
 ## How to use
 
 ```
-const logger = require('@fvilers/simple-logger').default;
+const logger = require('@fvilers/simple-logger');
 
 // Log anything
 logger.log('A string', { or: 'any object' }, 'even', new Date(), 'or a boolean', true);
@@ -43,7 +43,3 @@ const logger = new Logger('my logger);
 
 logger.log('Hey there!'); // This will output: [my logger] Hey, there!
 ```
-
-## Bugs
-
-Don't use version `1.0.0` in a project without `@babel/cli` as it won't be correctly transpiled during installation. This bug has been fixed in version `1.0.1`.
