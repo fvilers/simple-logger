@@ -1,14 +1,5 @@
-import { isBoolean, isDate, isFunction, isNumber, isString } from 'lodash';
 import chalk, { Chalk } from 'chalk';
-
-const shouldSerialize = (arg: any) =>
-  !isBoolean(arg) &&
-  !isDate(arg) &&
-  !isFunction(arg) &&
-  !isNumber(arg) &&
-  !isString(arg);
-const toString = (arg: any) =>
-  shouldSerialize(arg) ? JSON.stringify(arg) : arg.toString();
+import { toString } from './helpers';
 
 export class Logger {
   constructor(private readonly context?: string) {}
