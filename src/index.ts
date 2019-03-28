@@ -26,12 +26,12 @@ export class Logger {
     const { context, timestamp } = this.options;
     const text = new Array<string>();
 
-    if (context) {
-      text.push(`[${context}]`);
+    if (timestamp) {
+      text.push(new Date(Date.now()).toISOString());
     }
 
-    if (timestamp) {
-      text.push(`${Date.now()} -`);
+    if (context) {
+      text.push(`[${context}]`);
     }
 
     text.push(message);

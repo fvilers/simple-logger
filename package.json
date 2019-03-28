@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "rimraf dist && tsc",
-    "prepublish": "yarn run build"
+    "prepublish": "yarn run build",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -28,8 +29,14 @@
     "lodash": "^4.17.11"
   },
   "devDependencies": {
+    "@babel/core": "7.4.0",
+    "@babel/preset-env": "7.4.2",
+    "@babel/preset-typescript": "7.3.3",
+    "@types/jest": "24.0.11",
     "@types/lodash": "4.14.123",
     "@types/node": "11.11.3",
+    "babel-jest": "24.5.0",
+    "jest": "24.5.0",
     "rimraf": "2.6.3",
     "typescript": "3.3.3333"
   }
