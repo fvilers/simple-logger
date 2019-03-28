@@ -1,8 +1,9 @@
 import chalk, { Chalk } from 'chalk';
+import { Options, DEFAULT_OPTIONS } from './options';
 import { toString } from './helpers';
 
 export class Logger {
-  constructor(private readonly context?: string) {}
+  constructor(private readonly options: Options = DEFAULT_OPTIONS) {}
 
   public log(message: string, ...optionalParams: Array<any>) {
     this.writeLineTo(process.stdout, chalk.reset, message, optionalParams);
@@ -22,10 +23,11 @@ export class Logger {
     message: string,
     optionalParams: Array<any>
   ) {
+    const { context } = this.options;
     const buffer = Buffer.from(
       style(
         [
-          this.context ? `[${this.context}] ${message}` : message,
+          context ? `[${context}] ${message}` : message,
           ...optionalParams.map(toString)
         ].join(' ')
       )
