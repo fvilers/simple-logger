@@ -4,6 +4,7 @@
   "description": "A simple but colored logger for NodeJS",
   "main": "dist/index.js",
   "scripts": {
+    "prebuild": "yarn test",
     "build": "rimraf dist && tsc",
     "prepublish": "yarn run build",
     "test": "jest"
