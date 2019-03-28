@@ -4,19 +4,19 @@ import { toString } from './helpers';
 export class Logger {
   constructor(private readonly context?: string) {}
 
-  log(message: string, ...optionalParams: Array<any>) {
-    this._writeLineTo(process.stdout, chalk.reset, message, optionalParams);
+  public log(message: string, ...optionalParams: Array<any>) {
+    this.writeLineTo(process.stdout, chalk.reset, message, optionalParams);
   }
 
-  warn(message: string, ...optionalParams: Array<any>) {
-    this._writeLineTo(process.stdout, chalk.yellow, message, optionalParams);
+  public warn(message: string, ...optionalParams: Array<any>) {
+    this.writeLineTo(process.stdout, chalk.yellow, message, optionalParams);
   }
 
-  error(message: string, ...optionalParams: Array<any>) {
-    this._writeLineTo(process.stderr, chalk.red, message, optionalParams);
+  public error(message: string, ...optionalParams: Array<any>) {
+    this.writeLineTo(process.stderr, chalk.red, message, optionalParams);
   }
 
-  _writeLineTo(
+  private writeLineTo(
     stream: NodeJS.WriteStream,
     style: Chalk,
     message: string,
