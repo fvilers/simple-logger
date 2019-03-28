@@ -24,14 +24,16 @@ export class Logger {
     optionalParams: Array<any>
   ) {
     const { context } = this.options;
-    const buffer = Buffer.from(
-      style(
-        [
-          context ? `[${context}] ${message}` : message,
-          ...optionalParams.map(toString)
-        ].join(' ')
-      )
-    );
+    const text = new Array<string>();
+
+    if (context) {
+      text.push(`[${context}]`);
+    }
+
+    text.push(message);
+    text.push(...optionalParams.map(toString));
+
+    const buffer = Buffer.from(style(text.join(' ')));
 
     stream.write(buffer);
     stream.write('\n');
