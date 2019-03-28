@@ -23,11 +23,15 @@ export class Logger {
     message: string,
     optionalParams: Array<any>
   ) {
-    const { context } = this.options;
+    const { context, timestamp } = this.options;
     const text = new Array<string>();
 
     if (context) {
       text.push(`[${context}]`);
+    }
+
+    if (timestamp) {
+      text.push(`${Date.now()} -`);
     }
 
     text.push(message);
